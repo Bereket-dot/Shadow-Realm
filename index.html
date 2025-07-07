@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shadow Realm: The Awakening - Menu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Main Menu -->
+  <div id="menuScreen" class="overlay menu">
+    <h1 class="glowing">🏰 Shadow Realm</h1>
+    <p class="subtitle">The Awakening</p>
+    <button id="startBtn">▶️ Start Game</button>
+    <button id="instrBtn">📖 Instructions</button>
+    <button id="credBtn">🎓 Credits</button>
+  </div>
+
+  <!-- Instructions Overlay -->
+  <div id="instrScreen" class="overlay hidden">
+    <h2>How to Play</h2>
+    <ul>
+      <li>Use ⬅️⬆️➡️⬇️ to move</li>
+      <li>Collect glowing orbs 🟡 for score</li>
+      <li>Avoid shadows with glowing edge</li>
+      <li>Reach target score to unlock next level</li>
+      <li>Walls block your path but guide your way</li>
+      <li>Press ⎋ or Pause to pause the game</li>
+    </ul>
+    <button id="back1Btn">🔙 Back</button>
+  </div>
+
+  <!-- Credits Overlay -->
+  <div id="credScreen" class="overlay hidden">
+    <h2>Credits</h2>
+    <p>Game Developer: <strong>Beki</strong></p>
+    <p>Audio: Public domain & Pixabay</p>
+    <button id="back2Btn">🔙 Back</button>
+  </div>
+
+  <script>
+    // Menu Navigation
+    const startBtn = document.getElementById('startBtn');
+    const instrBtn = document.getElementById('instrBtn');
+    const credBtn = document.getElementById('credBtn');
+    const back1Btn = document.getElementById('back1Btn');
+    const back2Btn = document.getElementById('back2Btn');
+    const menu = document.getElementById('menuScreen');
+    const instr = document.getElementById('instrScreen');
+    const cred = document.getElementById('credScreen');
+
+    startBtn.onclick = () => window.location.href = 'game.html';
+    instrBtn.onclick = () => { menu.classList.add('hidden'); instr.classList.remove('hidden'); };
+    credBtn.onclick = () => { menu.classList.add('hidden'); cred.classList.remove('hidden'); };
+    back1Btn.onclick = () => { instr.classList.add('hidden'); menu.classList.remove('hidden'); };
+    back2Btn.onclick = () => { cred.classList.add('hidden'); menu.classList.remove('hidden'); };
+  </script>
+</body>
+</html>

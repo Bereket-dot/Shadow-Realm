@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Shadow Realm: Level Play</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="gameUI">
+    <canvas id="gameCanvas" width="900" height="600"></canvas>
+
+    <!-- HUD -->
+    <div class="hud">
+      <span>Level: <span id="level">1</span></span>
+      <span>Score: <span id="score">0</span></span>
+      <span>Health: <span id="health">100</span></span>
+      <button id="pauseBtn">⏸ Pause</button>
+      <button id="backBtn">🏠 Menu</button>
+    </div>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div id="gameOverScreen" class="overlay hidden">
+    <h1>☠ Game Over</h1>
+    <p>Final Score: <span id="finalScore">0</span></p>
+    <button id="playAgainBtn">🔁 Play Again</button>
+    <button id="menuBtn">🏠 Menu</button>
+  </div>
+
+  <!-- Audio - UPDATED WITH WORKING SOURCES -->
+  <audio id="bgMusic" loop>
+    <source src="http://commondatastorage.googleapis.com/codeskulptor-assets/Epoq-Lepidoptera.ogg" type="audio/mpeg">
+  </audio>
+  <audio id="orbSound">
+    <source src="http://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/pause.wav" type="audio/mpeg">
+  </audio>
+  <audio id="hitSound">
+    <source src="http://commondatastorage.googleapis.com/codeskulptor-demos/pyman_assets/theygotcha.ogg" type="audio/mpeg">
+  </audio>
+
+  <script src="game.js"></script>
+</body>
+</html>
